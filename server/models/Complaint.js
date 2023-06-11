@@ -9,12 +9,15 @@ const complaintSchema = new mongoose.Schema({
     },
     description:{
         type:String,
-        required: true,
+        required: true
     },
-    // user :{
-    //     type : mongoose.Types.ObjectId,
-    //     ref: "User",
-    // }
+    date :{
+        type: Date,
+    },
+    user :{
+        type : mongoose.Types.ObjectId,
+        ref: "User",
+    }
 });
 
 

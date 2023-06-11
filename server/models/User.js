@@ -6,16 +6,16 @@ const userSchema = new mongoose.Schema({
         type: String,
         required:true
     },
-    email:{
-        type:String,
+    email: {
+        type: String,
         required: true,
-        unique : true
+        // unique : true
     },
-    rollno:{
-        type : Number,
+    rollno: {
+        type: Number,
         required : true
     },
-    hostel:{
+    hostel: {
         type: String,
         required: true,
     },
@@ -24,18 +24,19 @@ const userSchema = new mongoose.Schema({
         required : true
     },
 
-    password:{
-        type:String,
+    password: {
+        type: String,
         required: true
     },
-    cpassword:{
-        type:String,
+
+    cpassword: {
+        type: String,
         required: true
     },
-    // complaints : [{
-    //     type: mongoose.Types.ObjectId, 
-    //     ref: "Post"
-    // }],
+    complaints : [{
+        type: mongoose.Types.ObjectId, 
+        ref: "Complaint"
+    }],
 
 });
 
