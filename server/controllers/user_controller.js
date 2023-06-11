@@ -2,6 +2,7 @@ import User from "../models/User.js";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import pkg from 'bcryptjs';
+import jwt from 'jsonwebtoken'
 const { hashSync } = pkg;
 
 //getAllUsers
@@ -71,12 +72,12 @@ export const login = async(req, res)=>{
             if(isMatch){
                 console.log(userLogin);
                 
-                // const token = await userLogin.generateAuthToken();
-                // console.log(token);
-                // res.cookie("jwtoken",token,{
-                //     expires : new Date(Date.now()+25892000000),
-                //     httpOnly:true
-                // });
+                const token = await userLogin.generateAuthToken();
+                console.log(token);
+                res.cookie("jwtoken",token,{
+                    expires : new Date(Date.now()+25892000000),
+                    httpOnly:true
+                });
                 // res.cookie("test",'val');
                 res.status(201).json({message: "user successfully logged in!"});
             }

@@ -5,6 +5,7 @@ import { connectDB } from "./db/dbconn.js";
 import userRouter from "./routing/user_routes.js";
 import complaintRouter from "./routing/complaint_routes.js";
 import AnnouncementRouter from "./routing/announcement_routes.js";
+import cookieParser from "cookie-parser";
 
 const app=express();
 dotenv.config({path:'./config.env'});
@@ -14,6 +15,7 @@ connectDB();
 
 //middlewares
 app.use(express.json());
+app.use(cookieParser());
 app.use('/users',userRouter);
 app.use('/complaints',complaintRouter);
 app.use('/announcements',AnnouncementRouter);
