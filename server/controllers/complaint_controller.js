@@ -21,13 +21,13 @@ export const getAllComplaints = async(req,res)=>{
     }
 };
 
-//AddComplaint
+//AddComplaint //need changes
 export const addComplaint = async(req,res)=>{
     const { title, description, date, user} = req.body;
     if (!title || !description) {
         return res.status(422).json({ error: "fields empty" });
     }
-
+    
     //extracting user
     let existingUser;
     try{

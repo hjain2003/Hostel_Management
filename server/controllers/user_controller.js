@@ -79,7 +79,7 @@ export const login = async(req, res)=>{
                     httpOnly:true
                 });
                 // res.cookie("test",'val');
-                res.status(201).json({message: "user successfully logged in!"});
+                res.status(201).json({message: "user successfully logged in!", userId : userLogin._id});
             }
             else{
                 res.status(400).json({message:"pwd incorrect!"});
@@ -92,6 +92,17 @@ export const login = async(req, res)=>{
     }catch(err){
         console.log(err);
     }
+}
+
+//homePage
+export const homeit = async(req,res)=>{
+    res.send(req.rootUser);
+};
+
+//userLogOut
+export const logout = async(req,res)=>{
+    res.clearCookie('jwtoken',{path:'/'})
+    res.status(200).json({message : "user logged out"});
 }
 
 
