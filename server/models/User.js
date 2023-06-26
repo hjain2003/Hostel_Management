@@ -39,6 +39,11 @@ const userSchema = new mongoose.Schema({
         ref: "Complaint"
     }],
 
+    complaintCount: {
+        type: Number,
+        default: 0
+    },
+
     tokens:[
         {
             token: {
@@ -48,6 +53,7 @@ const userSchema = new mongoose.Schema({
         }
     ]
 });
+
 
 userSchema.methods.generateAuthToken = async function(){
     try{

@@ -48,6 +48,7 @@ export const addComplaint = async(req,res)=>{
         session.startTransaction();
 
         existingUser.complaints.push(complaint); //pushing to posts array in user schema
+        existingUser.complaintCount +=1;
         await existingUser.save({session}); //saving user
         const complaintAdd = await complaint.save({session}); //saving post
         session.commitTransaction(); //finishing transaction
@@ -75,6 +76,7 @@ export const removeComplaint = async(req,res) =>{
         
         complaint = await Complaint.findById(id).populate("user");
         complaint.user.complaints.pull(complaint);
+        complaint.user.complaintCount -=1;
         await complaint.user.save({session});
         complaint = await Complaint.findByIdAndRemove(id);
         session.commitTransaction();

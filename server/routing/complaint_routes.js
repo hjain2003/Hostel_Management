@@ -6,6 +6,6 @@ const complaintRouter = express.Router();
 
 complaintRouter.get('/',getAllComplaints);
 complaintRouter.post('/addComplaint',Authenticate,addComplaint);
-complaintRouter.put('/:id',removeComplaint );
+complaintRouter.put('/:id',Authenticate,removeComplaint );
 
 export default complaintRouter;
