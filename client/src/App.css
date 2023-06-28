@@ -1,4 +1,4 @@
-.App{
+/* .App{
   overflow-y: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -21,4 +21,8 @@
   background-color: rgb(79, 0, 0);
   border-radius: 0vh 0 2.5vh 2.5vh;
   
+} */
+*{
+  margin:0px;
+  padding:0px;
 }
