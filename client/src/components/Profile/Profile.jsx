@@ -11,9 +11,9 @@ const Profile = () => {
           <div className="row1">
             <div className="profile_img_container">IMG</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div className="name_rollno">
-              <span id="stud_name">HARSH JAIN</span>
+              <span id="stud_name">JANE DOE</span>
               <br />
-              <span id="stud_rollno">102103432</span>
+              <span id="stud_rollno">102103420</span>
             </div>
           </div>
           <br />

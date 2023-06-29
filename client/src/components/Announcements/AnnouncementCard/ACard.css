@@ -1,0 +1,26 @@
+.datee{
+    color: rgb(10, 0, 120);
+    font-weight: 400;
+    font-size: 2vh;
+}
+
+.aHead{
+    color: rgb(1, 0, 16);
+    font-size: 2.5vh;
+}
+.justAcard{
+    height:fit-content;
+    width: 90%;
+    justify-content: flex;
+    flex-direction: column;
+    background-color: rgb(215, 215, 215);
+    margin: 2vh;
+    padding: 2vh;
+    color: black;
+    border-radius: 2vh;
+}
+
+.aBody{
+    color: black;
+    font-size: 2vh;
+}
