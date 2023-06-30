@@ -7,6 +7,7 @@ import TopTitle from "./components/TopTitle";
 import HostelBanner from './components/HostelBanner/HostelBanner';
 import SideNavbar from './components/SideNavbar/SideNavbar';
 import Profile from './components/Profile/Profile';
+import Announcement from './components/Announcements/Announcement';
 
 function App() {
   // const [currentForm, setCurrentForm] = useState('login');
@@ -19,7 +20,8 @@ function App() {
     <>
     {/* <HostelBanner/> */}
     {/* <SideNavbar/> */}
-    <Profile/>
+    {/* <Profile/> */}
+    <Announcement/>
     </>
     // <div className='App'>
     //   <div className="Head">

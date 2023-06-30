@@ -14,8 +14,8 @@
 }
 
 .profile_container {
-    height: 600px;
-    width: 700px;
+    height: 70vh;
+    width: 40vw;
     background-color: rgba(30, 30, 30, 0.98);
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
@@ -39,31 +39,32 @@
 
 .row1 .profile_img_container {
     background-color: black;
-    height: 200px;
-    width: 200px;
-    border-radius: 10px;
+    height: 23vh;
+    width: 12vw;
+    border-radius: 2vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .name_rollno {
-    font-size: 40px;
+    font-size: 5vh;
 }
 
 .hostel_card,
 .room_card,
 .semester_branch_card {
     background-color: rgba(111, 0, 0, 0.91);
-    padding: 7px;
-    border-radius: 15px;
+    padding: 1vh;
+    border-radius: 2vh;
+    margin: 1vh;
 }
 
 .hostel_card,
 .room_card {
-    font-size: 23px;
-    height: 150px;
-    width: 150px;
+    font-size: 2vh;
+    height: 18vh;
+    width: 18vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -72,21 +73,23 @@
 
 .hostel_card,
 .room_card h3 {
-    font-size: 25px;
+    font-size: 3vh;
 }
 
 .semester_branch_card {
-    padding: 10px;
-    height: 150px;
-    width: 230px;
-    font-size: 20px;
+    padding: 1vh;
+    padding-left: 3vw;
+    height: 18vh;
+    width: 18vw;
+    font-size: 2vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .row3 {
     background-color: rgba(0, 0, 0, 0.37);
-    padding: 10px;
+    padding: 1vh;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -94,14 +97,14 @@
 }
 
 .row3 h3 {
-    margin-top: 10px;
+    margin-top: 2vh;
 }
 
 .row3_content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px;
+    padding: 1.5vh;
 }
 
 .col1,
@@ -112,7 +115,7 @@
 }
 
 
-@media (max-width: 1336px) {
+@media (max-width: 800px) {
     .sideBar_Profile {
         margin-top: 350px;
         height: 1000px;
@@ -122,12 +125,14 @@
 
 @media (max-width: 768px) {
     .sideBar_Profile {
+        border-radius: 0;
         margin-left: 0;
         /* Remove the margin to allow full overlapping in mobile view */
-        margin-top: 250px;
+        margin-top: 19vh;
     }
 
     .profile_container {
+        border-radius: 0;
         height: auto;
         width: 90%;
         overflow-y: auto;
@@ -148,8 +153,8 @@
     .hostel_card,
     .room_card,
     .semester_branch_card {
-        height: 120px;
-        width: 120px;
+        height: 15vh;
+        width: 30vw;
         margin-bottom: 10px;
         margin-left: auto;
         margin-right: auto;
@@ -165,9 +170,10 @@
     }
 
     .semester_branch_card {
-        height: auto;
-        width: 100%;
+        height: 15vh;
+        width: 30vw;
         padding: 5px;
+        font-size: 2.5vh;
     }
 
     .row3_content {

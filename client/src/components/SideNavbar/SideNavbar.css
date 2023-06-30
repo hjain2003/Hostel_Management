@@ -6,10 +6,11 @@
     border-bottom-left-radius: 10px;
     color: white;
     background-color: rgba(111, 0, 0, 0.91);
-    height: 600px;
+    height: 70vh;
     padding: 20px;
-    width: 200px;
+    width: 10vw;
     align-items: center;
+    
 }
 
 .side_nav a {
@@ -20,6 +21,7 @@
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+    padding-top: 20px;
 }
 
 .side_nav .nav_icon {
@@ -56,7 +58,8 @@
         width: 10px;
         padding: 15px;
         /* Decrease the padding */
-    }
+        border-radius: 0;
+    }    
 
     .side_nav a {
         flex-direction: column-reverse;
