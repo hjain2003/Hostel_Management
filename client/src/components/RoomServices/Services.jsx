@@ -10,25 +10,25 @@ const Services = () => {
       <div className="sideBar_Profile">
         <SideNavbar />
         <div className='req_contain'>
-        <div className='row112'>
-            <div className="ircard">
-              REQUESTS
-              <br />
-              <h2>300</h2>
-            </div>
-            <div className="ircard">
-              RESOLVED
-              <br />
-              <h2>200</h2>
-            </div>
-            <div className="reqCard">
-              <span className='rhead'>REQUEST</span>
-              <div>
-              <button className='rclean'><FaUser/>&ensp; Room Cleaning</button>
-              <button className='other'><FaUser/>&ensp; Others</button>
+          <div className='row112'>
+              <div className="ircard">
+                REQUESTS
+                <br />
+                <h2>300</h2>
               </div>
-            </div>
-        </div>
+              <div className="ircard">
+                RESOLVED
+                <br />
+                <h2>200</h2>
+              </div>
+              <div className="reqCard">
+                <span className='rhead'>REQUEST</span>
+                <div>
+                <button className='rclean'><FaUser/>&ensp; Room Cleaning</button>
+                <button className='other'><FaUser/>&ensp; Others</button>
+                </div>
+              </div>
+          </div>
         <div className='nextRow'>
         <div className='cHead'>CURRENT REQUESTS</div>
         <div className='reqDisplay'>
