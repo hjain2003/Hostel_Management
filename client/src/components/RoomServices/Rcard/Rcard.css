@@ -1,29 +1,37 @@
-.aTitle{
-    color: rgb(1, 0, 16);
-    font-size: 2vh;
-    font-weight: 200;
-}
 .Thecard{
     height:fit-content;
     width: 90%;
     display: flex;
-    flex-direction: row;
-    background-color: rgb(215, 215, 215);
-    margin: 2vh;
+    align-items: center;
+    background-color: rgb(180, 180, 180);
+    margin: 1vh;
     padding: 2vh;
     color: black;
     border-radius: 2vh;
 }
 .aTitle{
-    align-items: left;
+    color: rgb(1, 0, 16);
+    font-size: 2vh;
+    font-weight: 400;
+    width: 50vw;
 }
 .done{
-    background-color: rgba(0, 128, 0, 0.77);
-    margin: 1vh;
+    background-color: rgba(0, 88, 0, 0.77);
+    border-radius: 4vw;
     right: 0px;
 }
+.done:hover{
+    background-color: rgba(0, 114, 0, 0.77);
+    cursor: pointer;
+}
+
 .cancle{
     background-color: rgba(128, 0, 0, 0.77);
-    margin: 1vh;
+    margin-left: 1vh;
+    border-radius: 4vw;
+}
+.cancle:hover{
+    background-color: rgba(150, 1, 1, 0.77);
+    cursor: pointer;
 }
 

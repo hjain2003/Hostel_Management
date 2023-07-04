@@ -33,6 +33,9 @@ const Services = () => {
         <div className='cHead'>CURRENT REQUESTS</div>
         <div className='reqDisplay'>
         <RCard/>
+        <RCard/>
+        <RCard/>
+        <RCard/>
         </div>
         </div>
         </div>

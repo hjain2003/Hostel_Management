@@ -42,6 +42,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-top: 3vh;
 }
 
 .row112{
@@ -65,6 +67,14 @@
     border-radius: 4vh;
     width: max-content;
     font-size: 2vh;
+    text-align: center;
+    align-items: center;
+}
+.rclean:hover{
+    cursor: pointer;
+    background-color: rgba(40, 137, 66, 0.699); 
+    font-weight: 500;
+    border-color: rgba(0, 255, 68, 0.699); 
 }
 
 .other{
@@ -75,6 +85,10 @@
     font-size: 2vh;
     width: fit-content;
 }
+.other:hover{
+    background-color: rgba(107, 107, 107, 0.699);
+}
+
 .nextRow{
     margin: 3vh;
 }
@@ -89,7 +103,7 @@
 .reqDisplay{
     background-color: rgba(0, 0, 0, 0.37);
     padding: 1vh;
-    border-radius: 30px;
+    border-radius: 1.5vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -97,7 +111,7 @@
     overflow-x: hidden;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 600px) {
     .reqCard {
         margin-top: 5vh;
         width: inherit;
@@ -126,9 +140,13 @@
         margin-top: 6yyyvh;
     }
 
+    .req_contain{
+        margin-top: 6vh;
+    }
+
     
 }
-@media (max-width: 800px) {
+@media (max-width: 600px) {
     .row112{
         flex-direction: column;
         height: 100vh;
