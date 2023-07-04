@@ -1,0 +1,88 @@
+.reg_req_container{
+    height: 70vh;
+    width: 40vw;
+    background-color: rgba(30, 30, 30, 0.98);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+    
+}
+.reg_req_container h1{
+    font-size: 3.5vh;
+    font-weight: 300;
+    text-align: center;
+}
+
+.textArea{
+    height: 35vh;
+    width: 95%;
+    background-color: rgb(17, 17, 17);
+    color: antiquewhite;
+    padding: 2vh;
+    border: none;
+    overflow: scroll;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 2vh;
+    resize: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.problem{
+    padding: 1vh;
+    width: 100%;
+    background-color: rgb(17, 17, 17);
+    margin: 2vh 0vh 2vh 1vh;
+    color: azure;
+    border: none;
+    border-radius: 1vh;
+}
+
+.submitting{
+    float: right;
+    padding: 2vh;
+    width: 50%;
+    background-color: rgb(0, 119, 20);
+    margin: 2vh 0vh 2vh 1vh;
+    color: azure;
+    border: none;
+    border-radius: 1vh;
+    font-size: 2vh;
+}
+
+.cancelling{
+    /* float: right; */
+    padding: 2vh;
+    background-color: rgb(119, 0, 0);
+    margin: 2vh 0vh 2vh 1vh;
+    color: azure;
+    width: 45%;
+    border: none;
+    border-radius: 1vh;
+    font-size: 2vh;
+}
+
+
+@media (max-width: 768px) {
+    .reg_req_container {
+        border-radius: 0;
+        height: auto;
+        width: 90%;
+        overflow-y: auto;
+    }
+
+    .ann_disp{
+        background-color: rgba(0, 0, 0, 0.37);
+        padding: 1vh;
+        border-radius: 30px;
+        height:75vh;
+    }
+    .textArea{
+        height: 70vh;
+        width: 95%;
+    }
+}
