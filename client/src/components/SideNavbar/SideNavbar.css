@@ -35,11 +35,12 @@
 .side_nav span {
     width: 200px;
     text-align: center;
-    border-radius: 20px;
+    border-radius: 20px 2px 2px 20px;
 }
 
 .side_nav span:hover {
-    background-color: black;
+    background-color: rgb(27, 27, 27);
+    overflow: hidden;
 }
 
 .side_nav hr {

@@ -9,6 +9,7 @@ import SideNavbar from './components/SideNavbar/SideNavbar';
 import Profile from './components/Profile/Profile';
 import Announcement from './components/Announcements/Announcement';
 import Services from './components/RoomServices/Services'
+import RequestForm from './components/RequesForm/Form'
 
 function App() {
   // const [currentForm, setCurrentForm] = useState('login');
@@ -23,7 +24,8 @@ function App() {
     {/* <SideNavbar/> */}
     {/* <Profile/> */}
     {/* <Announcement/> */}
-    <Services/>
+    {/* <Services/> */}
+    <RequestForm/>
     </>
     // <div className='App'>
     //   <div className="Head">
