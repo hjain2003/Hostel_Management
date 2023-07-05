@@ -3,8 +3,16 @@ import './Services.css';
 import SideNavbar from '../SideNavbar/SideNavbar';
 import { FaUser, FaClipboardList, FaBell } from 'react-icons/fa';
 import RCard from './Rcard/Rcard';
+import { useNavigate } from 'react-router-dom';
 
 const Services = () => {
+
+  const navigate = useNavigate();
+
+  const handleOthersbutton = ()=>{
+    navigate('/reqform');
+  }
+  
   return (
     <div className="entire_page_div">
       <div className="sideBar_Profile">
@@ -25,13 +33,14 @@ const Services = () => {
                 <span className='rhead'>REQUEST</span>
                 <div>
                 <button className='rclean'><FaUser/>&ensp; Room Cleaning</button>
-                <button className='other'><FaUser/>&ensp; Others</button>
+                <button className='other' onClick={handleOthersbutton}><FaUser/>&ensp; Others</button>
                 </div>
               </div>
           </div>
         <div className='nextRow'>
         <div className='cHead'>CURRENT REQUESTS</div>
         <div className='reqDisplay'>
+        <RCard/>
         <RCard/>
         <RCard/>
         <RCard/>

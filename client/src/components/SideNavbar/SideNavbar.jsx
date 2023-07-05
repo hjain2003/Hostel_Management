@@ -1,31 +1,34 @@
 import React from 'react';
 import './SideNavbar.css';
 import { FaUser, FaClipboardList, FaBell } from 'react-icons/fa';
+import { NavLink } from 'react-router-dom';
 
 const SideNavbar = () => {
   return (
+    <>
     <div className="side_nav">
       <span id="top_icon">
-        <a href="/">
+        <NavLink to="/profile">
           <FaUser className="nav_icon" />
           <span className="nav_label">Profile</span>
-        </a>
+        </NavLink>
       </span>
       <hr /><br />
       <span>
-        <a href="/">
+        <NavLink to="/services">
           <FaClipboardList className="nav_icon" />
           <span className="nav_label">Room Services</span>
-        </a>
+        </NavLink>
       </span>
       <hr /><br />
       <span>
-        <a href="/">
+        <NavLink to ="/announcements">
           <FaBell className="nav_icon" />
           <span className="nav_label">Announcements</span>
-        </a>
+        </NavLink>
       </span>
     </div>
+    </>
   );
 };
 

@@ -1,43 +1,24 @@
 import './App.css';
 import React, { useState } from "react";
-import './components/styles.css';
-import { Login } from "./components/loginCard";
-import { Register } from "./components/Register";
-import TopTitle from "./components/TopTitle";
-import HostelBanner from './components/HostelBanner/HostelBanner';
-import SideNavbar from './components/SideNavbar/SideNavbar';
 import Profile from './components/Profile/Profile';
 import Announcement from './components/Announcements/Announcement';
 import Services from './components/RoomServices/Services'
 import RequestForm from './components/RequesForm/Form'
+import { Routes, Route } from 'react-router-dom';
+import Login from './components/LoginCard/Login';
 
 function App() {
-  // const [currentForm, setCurrentForm] = useState('login');
-
-  // const toggleForm = (formName) => {
-  //   setCurrentForm(formName);
-  // }
 
   return (
     <>
-    {/* <HostelBanner/> */}
-    {/* <SideNavbar/> */}
-    {/* <Profile/> */}
-    {/* <Announcement/> */}
-    {/* <Services/> */}
-    <RequestForm/>
+    <Routes>
+      <Route path ='/' element ={<Login/>} />
+      <Route path ='/profile' element = {<Profile/>}/>
+      <Route path = '/announcements' element={<Announcement/>}/>
+      <Route path='/services' element={<Services/>}/>
+      <Route path='/reqform' element={<RequestForm/>}/>
+    </Routes>
     </>
-    // <div className='App'>
-    //   <div className="Head">
-    //     <TopTitle/>
-    //     </div>
-    //     <div className="AppMain">
-    //     {
-    //       currentForm === "login" ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
-    //     }
-    //     </div>
-    // </div>
-    
   );  
 }
 
