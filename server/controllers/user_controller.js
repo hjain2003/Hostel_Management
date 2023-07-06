@@ -58,13 +58,13 @@ export const signup = async (req, res) => {
 //userLogin
 export const login = async(req, res)=>{
     try{
-        const {username, password}=req.body;
+        const {email, password}=req.body;
 
-        if(!username || !password){
+        if(!email || !password){
             res.status(400).json({message:"fields empty!"});
         }
 
-        const userLogin=await User.findOne({username:username}) //has entire document
+        const userLogin=await User.findOne({email:email}) //has entire document
 
         if(userLogin){
             const isMatch = await bcrypt.compare(password, userLogin.password);
@@ -79,7 +79,7 @@ export const login = async(req, res)=>{
                     httpOnly:true
                 });
                 // res.cookie("test",'val');
-                res.status(201).json({message: "user successfully logged in!", userId : userLogin._id});
+                res.status(201).json({message: "user successfully logged in!", userId : userLogin._id, token: token});
             }
             else{
                 res.status(400).json({message:"pwd incorrect!"});

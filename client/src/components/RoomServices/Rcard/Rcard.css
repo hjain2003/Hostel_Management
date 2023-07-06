@@ -1,37 +1,52 @@
-.Thecard{
-    height:fit-content;
+.Thecard {
+    height: fit-content;
     width: 90%;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     background-color: rgb(180, 180, 180);
     margin: 1vh;
     padding: 2vh;
     color: black;
     border-radius: 2vh;
-}
-.aTitle{
+  }
+  
+  .Thecard span {
+    font-size: 15px;
+  }
+  
+  .heading_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* Add this line to vertically align the heading and button */
+    /* border: 2px solid lightblue; */
+  }
+  
+  .aTitle {
     color: rgb(1, 0, 16);
     font-size: 2vh;
     font-weight: 400;
-    width: 50vw;
-}
-.done{
+    flex-grow: 1; /* Add this line to allow the heading to grow and occupy available space */
+  }
+  
+  .done {
     background-color: rgba(0, 88, 0, 0.77);
     border-radius: 4vw;
-    right: 0px;
-}
-.done:hover{
+  }
+  
+  .done:hover {
     background-color: rgba(0, 114, 0, 0.77);
     cursor: pointer;
-}
-
-.cancle{
+  }
+  
+  .cancle {
     background-color: rgba(128, 0, 0, 0.77);
     margin-left: 1vh;
     border-radius: 4vw;
-}
-.cancle:hover{
+  }
+  
+  .cancle:hover {
     background-color: rgba(150, 1, 1, 0.77);
     cursor: pointer;
-}
-
+  }
+  

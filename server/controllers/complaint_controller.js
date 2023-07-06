@@ -28,10 +28,10 @@ export const addComplaint = async(req,res)=>{
         return res.status(422).json({ error: "fields empty" });
     }
     
-    //extracting user
+    const userId = req.rootUser._id;
     let existingUser;
     try{
-        existingUser = await User.findById(user);
+        existingUser = await User.findById(userId);
     }catch(err){    
         console.log(err);
     }
@@ -41,7 +41,7 @@ export const addComplaint = async(req,res)=>{
 
 
     try {
-        const complaint = new Complaint({ title, description, date : new Date(), user });
+        const complaint = new Complaint({ title, description, date : new Date(), user: userId });
 
         //create session to save post in both collections
         const session = await mongoose.startSession(); //starts a session
@@ -75,8 +75,8 @@ export const removeComplaint = async(req,res) =>{
         session.startTransaction();
         
         complaint = await Complaint.findById(id).populate("user");
+        complaint.user.complaintsResolved +=1;
         complaint.user.complaints.pull(complaint);
-        complaint.user.complaintCount -=1;
         await complaint.user.save({session});
         complaint = await Complaint.findByIdAndRemove(id);
         session.commitTransaction();

@@ -7,6 +7,18 @@
     background-image: url('../../../public/assets/M-Hostel_bw.jpg');
 }
 
+.logout{
+    color: white;
+    position: absolute;
+    top:10px;
+    right:10px;
+    z-index: 10000;
+}
+.logout a{
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
 .sideBar_Profile {
     display: flex;
     flex-direction: row;

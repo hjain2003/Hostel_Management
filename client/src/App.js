@@ -6,6 +6,7 @@ import Services from './components/RoomServices/Services'
 import RequestForm from './components/RequesForm/Form'
 import { Routes, Route } from 'react-router-dom';
 import Login from './components/LoginCard/Login';
+import Logout from './components/LoginCard/Logout';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <Route path = '/announcements' element={<Announcement/>}/>
       <Route path='/services' element={<Services/>}/>
       <Route path='/reqform' element={<RequestForm/>}/>
+      <Route path='/logout' element={<Logout/>}/>
     </Routes>
     </>
   );  

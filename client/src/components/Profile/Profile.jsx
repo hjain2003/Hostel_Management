@@ -1,19 +1,55 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Profile.css';
 import SideNavbar from '../SideNavbar/SideNavbar';
+import { NavLink, Navigate, useNavigate } from 'react-router-dom';
 
 const Profile = () => {
+
+  const navigate = useNavigate();
+  const [userData,setUserData] = useState('');
+
+  const callProfilePage = async () => {
+    try {
+      const res = await fetch('http://localhost:5000/users/dashboard', {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include'
+      });
+
+      const data = await res.json();
+      console.log(data);
+      setUserData(data);
+
+      if (res.status !== 200) {
+        navigate('/');
+        const error = new Error(res.error);
+        throw error;
+      }
+    } catch (err) {
+      console.log(err);
+      navigate('/');
+    }
+  };
+
+  useEffect(() => {
+    callProfilePage();
+  }, []);
+
   return (
     <div className="entire_page_div">
+      <span className='logout'><b><u><NavLink to='/logout'>LOGOUT</NavLink></u>&nbsp;&nbsp;{userData.username}</b></span>
       <div className="sideBar_Profile">
         <SideNavbar />
         <div className="profile_container">
           <div className="row1">
             <div className="profile_img_container">IMG</div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <div className="name_rollno">
-              <span id="stud_name">JANE DOE</span>
+              <span id="stud_name">{userData.username}</span>
               <br />
-              <span id="stud_rollno">102103420</span>
+              <span id="stud_rollno">{userData.rollno}</span>
             </div>
           </div>
           <br />
@@ -21,12 +57,12 @@ const Profile = () => {
             <div className="hostel_card">
               HOSTEL
               <br />
-              <h2>J</h2>
+              <h2>{userData.hostel}</h2>
             </div>
             <div className="room_card">
               ROOM
               <br />
-              <h2>EB-207</h2>
+              <h2>{userData.roomno}</h2>
             </div>
             <div className="semester_branch_card">
               <span>Semester: 5</span>

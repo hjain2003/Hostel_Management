@@ -43,6 +43,11 @@ const userSchema = new mongoose.Schema({
         type: Number,
         default: 0
     },
+    complaintsResolved: {
+        type: Number,
+        default: 0
+      },
+      
 
     tokens:[
         {
