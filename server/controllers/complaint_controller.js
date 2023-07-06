@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 import User from "../models/User.js";
 
 //getAllComplaints
-export const getAllComplaints = async(req,res)=>{
+export const getAllComplaints = async (req, res) => {
     let complaints;
 
     try {
@@ -21,18 +21,37 @@ export const getAllComplaints = async(req,res)=>{
     }
 };
 
-//AddComplaint //need changes
-export const addComplaint = async(req,res)=>{
-    const { title, description, date, user} = req.body;
-    if (!title || !description) {
+//getMyComplaints
+export const getMyComplaints = async (req, res) => {
+    try {
+        const userId = req.query.userId;
+
+        console.log(userId);
+        const complaints = await Complaint.find({ user: userId });
+
+        if (complaints) {
+            res.status(200).json({ complaints });
+        } else {
+            res.status(500).json({ error: 'Unexpected error' });
+        }
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ error: 'Unexpected error' });
+    }
+}
+
+//AddComplaint
+export const addComplaint = async (req, res) => {
+    const { title, description, date, user } = req.body;
+    if (!title) {
         return res.status(422).json({ error: "fields empty" });
     }
-    
+
     const userId = req.rootUser._id;
     let existingUser;
-    try{
+    try {
         existingUser = await User.findById(userId);
-    }catch(err){    
+    } catch (err) {
         console.log(err);
     }
     if (!existingUser) {
@@ -41,16 +60,25 @@ export const addComplaint = async(req,res)=>{
 
 
     try {
-        const complaint = new Complaint({ title, description, date : new Date(), user: userId });
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric',
+            hour12: true
+        });
+        const complaint = new Complaint({ title, description, date: formattedDate, user: userId });
 
         //create session to save post in both collections
         const session = await mongoose.startSession(); //starts a session
         session.startTransaction();
 
         existingUser.complaints.push(complaint); //pushing to posts array in user schema
-        existingUser.complaintCount +=1;
-        await existingUser.save({session}); //saving user
-        const complaintAdd = await complaint.save({session}); //saving post
+        existingUser.complaintCount += 1;
+        await existingUser.save({ session }); //saving user
+        const complaintAdd = await complaint.save({ session }); //saving post
         session.commitTransaction(); //finishing transaction
 
         if (complaintAdd) {
@@ -65,30 +93,25 @@ export const addComplaint = async(req,res)=>{
 }
 
 //RemoveComplaint
-export const removeComplaint = async(req,res) =>{
-    const id =req.params.id;
+export const removeComplaint = async (req, res) => {
+    const id = req.params.id;
 
-    let complaint;
     try {
-
-        const session = await mongoose.startSession();
-        session.startTransaction();
-        
-        complaint = await Complaint.findById(id).populate("user");
-        complaint.user.complaintsResolved +=1;
-        complaint.user.complaints.pull(complaint);
-        await complaint.user.save({session});
-        complaint = await Complaint.findByIdAndRemove(id);
-        session.commitTransaction();
-
-        if (complaint) {
-            res.status(201).json({ message : "complaint deleted successfully" });
+        const deletedComplaint = await Complaint.findByIdAndDelete(id);
+        if (deletedComplaint) {
+            const userId = deletedComplaint.user;
+            const user = await User.findById(userId);
+            user.complaintsResolved += 1;
+            if (user) {
+                user.complaints.pull(id);
+                await user.save();
+            }
+            res.status(200).json({ message: "complaint removed successfully !" });
+        } else {
+            res.status(404).json({ message: "complaint not found" });
         }
-        else {
-            res.status(422).json({ message: "unable to delete complaint" });
-        }
-
     } catch (error) {
-        return console.log(error);
+        console.log(error);
+        res.status(500).json({ error: "unexpected internal error" });
     }
 }

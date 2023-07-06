@@ -12,6 +12,7 @@ const Services = () => {
   const handleOthersbutton = ()=>{
     navigate('/reqform');
   }
+  //complaint status
   const [complaintStatus,setComplaintStatus] = useState('');
 
   const callComplaintStatus = async () => {
@@ -40,10 +41,78 @@ const Services = () => {
     }
   };
 
+  //comlaintCards
+  const userId = localStorage.getItem("userId");
+  const [complaintCards,setComplaintCards] = useState([1,2,3,4,5]);
+  
+  const showComplaintCards = async()=>{
+    try {
+      const res = await fetch(
+        `http://localhost:5000/complaints/myComplaints?userId=${userId}`,
+        {
+          method: 'GET',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+          },
+          credentials: 'include'
+        }
+      );
+
+      if (res.status === 200) {
+        const data = await res.json();
+        setComplaintCards(data.complaints);
+      } else {
+        console.log('Error:', res.status);
+      }
+    } catch (err) {
+      console.log(err);
+      navigate('/');
+    }
+  }
+
   useEffect(() => {
     callComplaintStatus();
+    showComplaintCards();
   }, []);
 
+
+  const [complaintDetails,setComplaintDetails] = useState({
+    title: "Room Cleaning",
+    description: ""
+  })
+
+  //handleRoomCleaning
+  const handleRoomCleaning = async()=>{
+    try {
+      const res = await fetch('http://localhost:5000/complaints/addComplaint', {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          title: complaintDetails.title,
+          description: complaintDetails.description
+        }),
+      });
+  
+      const data = await res.json();
+  
+      if (res.status === 422) {
+        window.alert('Complaint Addition failed!');
+        console.log(res.status);
+        console.log(data);
+      } else if (res.status !== 422) {
+        window.alert('Complaint successfully registered!');
+        console.log(res.status);
+        console.log(data);
+      }
+    } catch (error) {
+      console.log(error);
+      navigate('/');
+    }
+  }
   
   return (
     <div className="entire_page_div">
@@ -65,19 +134,24 @@ const Services = () => {
               <div className="reqCard">
                 <span className='rhead'>REQUEST</span>
                 <div>
-                <button className='rclean'><FaUser/>&ensp; Room Cleaning</button>
+                <button className='rclean' onClick={handleRoomCleaning}><FaUser/>&ensp; Room Cleaning</button>
                 <button className='other' onClick={handleOthersbutton}><FaUser/>&ensp; Others</button>
                 </div>
               </div>
           </div>
         <div className='nextRow'>
-        <div className='cHead'>CURRENT REQUESTS</div>
+        <div className='cHead'>CURRENT REQUESTS ({complaintStatus.complaintCount - complaintStatus.complaintsResolved})</div>
         <div className='reqDisplay'>
-        <RCard/>
-        <RCard/>
-        <RCard/>
-        <RCard/>
-        <RCard/>
+        {
+          complaintCards.map((item,index) =>(
+            <RCard 
+            key= {item._id}
+            complaintId= {item._id} 
+            title={item.title}
+            date = {item.date}
+            />
+          ))
+        }
         </div>
         </div>
         </div>

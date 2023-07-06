@@ -52,6 +52,7 @@
     border: none;
     border-radius: 1vh;
     font-size: 2vh;
+    cursor: pointer;
 }
 
 .cancelling{
@@ -64,6 +65,7 @@
     border: none;
     border-radius: 1vh;
     font-size: 2vh;
+    cursor: pointer;
 }
 
 
