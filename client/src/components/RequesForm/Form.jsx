@@ -7,11 +7,11 @@ function RequestForm() {
   const navigate = useNavigate();
 
   let problems = [
-    { label: "Fell in Love", value: "1" },
-    { label: "Missed my exam because I overslept", value: "2" },
-    { label: "Was dancing with my roomate and realised I was a lesbian", value: "3" },
-    { label: "Wanted to kill myself after watching the ending of Game of Thrones", value: "4" },
-    { label: "The toilet is blocked like my crush's heart", value: "5" }
+    { label: "Modem not working", value: "1" },
+    { label: "Electrical appliances not working", value: "2" },
+    { label: "Water cooler fix", value: "3" },
+    { label: "furniture broken", value: "4" },
+    { label: "Other", value: "5" }
   ];
 
   const [complaint_details, setComplaintDetails] = useState({
