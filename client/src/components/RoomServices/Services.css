@@ -69,6 +69,8 @@
     text-align: center;
     align-items: center;
     cursor: pointer;
+    color: white;
+    border: none;
 }
 .rclean:hover{
     cursor: pointer;
@@ -85,6 +87,8 @@
     font-size: 2vh;
     width: fit-content;
     cursor: pointer;
+    color: white;
+    border: none;
 }
 .other:hover{
     background-color: rgba(107, 107, 107, 0.699);
