@@ -1,0 +1,122 @@
+.reg_req_container{
+    height: 70vh;
+    width: 40vw;
+    background-color: rgba(30, 30, 30, 0.98);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+    
+}
+.reg_req_container h1{
+    font-size: 3.5vh;
+    font-weight: 300;
+    text-align: center;
+}
+
+.textArea{
+    height: 25vh;
+    width: 95%;
+    background-color: rgb(17, 17, 17);
+    color: antiquewhite;
+    padding: 2vh;
+    border: none;
+    overflow: scroll;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 2vh;
+    resize: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 1vh;
+}
+
+.titleAr{
+    width: 95%;
+    height: 3vh;
+    margin: 1vh;
+    background-color: rgb(17, 17, 17);
+    color: antiquewhite;
+    padding: 2vh;
+    border: none;
+    overflow: none;
+    font-family: 'Segoe UI', sans-serif;
+    border-radius: 2vh;
+    resize: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.hostel{
+    padding: 1vh;
+    width: 25%;
+    background-color: rgb(17, 17, 17);
+    margin: 2vh 0vh 1vh 1vh;
+    color: azure;
+    border: none;
+    border-radius: 1vh;
+    height: 6vh;
+}
+.hostel:hover{
+    background-color: rgb(45, 45, 45);
+    
+}
+
+.submitting{
+    float: right;
+    padding: 2vh;
+    width:20%;
+    background-color: rgb(0, 119, 20);
+    margin: 2vh 0vh 2vh 1vh;
+    color: azure;
+    border: none;
+    border-radius: 1vh;
+    font-size: 2vh;
+    cursor: pointer;
+}
+.submitting:hover{
+    background-color: rgb(57, 152, 73);
+}
+
+.cancelling{
+    float: right;
+    padding: 2vh;
+    background-color: rgb(119, 0, 0);
+    margin: 2vh 0vh 2vh 1vh;
+    color: azure;
+    width: auto;
+    border: none;
+    border-radius: 1vh;
+    font-size: 2vh;
+    cursor: pointer;
+}
+.cancelling:hover{
+    background-color: rgb(145, 54, 54);
+}
+
+.bform{
+    display: flex;
+    flex-direction: row;
+}
+@media (max-width: 768px) {
+    .reg_req_container {
+        border-radius: 0;
+        height: auto;
+        width: 90%;
+        overflow-y: auto;
+    }
+
+    .ann_disp{
+        background-color: rgba(0, 0, 0, 0.37);
+        padding: 1vh;
+        border-radius: 30px;
+        height:75vh;
+    }
+    .textArea{
+        height: 60vh;
+        width: 95%;
+    }
+}

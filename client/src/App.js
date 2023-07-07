@@ -8,6 +8,7 @@ import { Routes, Route } from 'react-router-dom';
 import Login from './components/LoginCard/Login';
 import Logout from './components/LoginCard/Logout';
 import AdminAnnouncements from './components/AdminAnnouncements/AdminAnnouncements'
+import AdminAddAnn from './components/AdminAddAnn/AdminAddAnn'
 
 function App() {
 
@@ -21,8 +22,9 @@ function App() {
       <Route path='/reqform' element={<RequestForm/>}/>
       <Route path='/logout' element={<Logout/>}/>
     </Routes>
-    
+
     {/* <AdminAnnouncements/> */}
+    {/* <AdminAddAnn/> */}
     </>
   );  
 }
