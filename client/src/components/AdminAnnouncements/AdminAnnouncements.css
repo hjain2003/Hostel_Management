@@ -1,0 +1,164 @@
+.full_page_div {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../../../public/assets/M-Hostel_bw.jpg');
+    overflow-y: hidden;
+}
+
+.sideBar_Profile {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.ann_container {
+    height: 70vh;
+    width: 40vw;
+    background-color: rgba(30, 30, 30, 0.98);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+}
+
+.ann_disp{
+    background-color: rgba(0, 0, 0, 0.37);
+    padding: 1vh;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:inherit;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.row11{
+    flex-direction: column;
+}
+.row2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.row2 {
+    justify-content: space-around;
+}
+
+.heading h3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 4vh;
+    font-weight: 400;
+    text-decoration: underline;
+
+}
+
+::-webkit-scrollbar {
+    width: 1vh;
+    border-radius: 3vh;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #131313;
+    border-radius: 3vh;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #6a6a6a;
+    border-radius: 3vh;
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+
+
+@media (max-width: 800px) {
+    .heading h3{
+        margin-top: 5vh;
+        font-size: 3vh;
+    }
+    .sideBar_Profile {
+        margin-top: 350px;
+        height: 1000px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sideBar_Profile {
+        border-radius: 0;
+        margin-left: 0;
+        /* Remove the margin to allow full overlapping in mobile view */
+        margin-top: 19vh;
+    }
+
+    .ann_container {
+        border-radius: 0;
+        height: auto;
+        width: 90%;
+        overflow-y: auto;
+    }
+
+    .ann_disp{
+        background-color: rgba(0, 0, 0, 0.37);
+        padding: 1vh;
+        border-radius: 30px;
+        height:75vh;
+    }
+
+    .row1,
+    .row2 {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media(max-width:415px) {
+    .sideBar_Profile {
+        margin-top: 100px;
+    }
+}
+
+@media(max-width:376px) {
+    .sideBar_Profile {
+        margin-top: 250px;
+        height: 920px;
+    }
+}
+
+@media(max-width:361px) {
+    .sideBar_Profile {
+        margin-top: 120px;
+        height: 920px;
+    }
+}
+
+.addAnn{
+    margin: 2vh;
+    font-size: 2vh;
+    padding: 1vh;
+    border-radius: 1vh;
+    background-color: rgb(65, 148, 65);
+    border: none;
+    color: white;
+}
+
+.addAnn:hover{
+    cursor: pointer;
+    background-color: rgb(51, 122, 51);
+}
