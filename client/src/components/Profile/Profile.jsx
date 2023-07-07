@@ -40,7 +40,7 @@ const Profile = () => {
 
   return (
     <div className="entire_page_div">
-      <span className='logout'><b><u><NavLink to='/logout'>LOGOUT</NavLink></u>&nbsp;&nbsp;{userData.username}</b></span>
+      <span className='logout'><b><u><NavLink to='/logout'>LOGOUT</NavLink></u></b></span>
       <div className="sideBar_Profile">
         <SideNavbar />
         <div className="profile_container">

@@ -64,7 +64,7 @@ const Login = () => {
                     <button type="submit" id="login" onClick={handleLogin}>Log In</button>
                 </form>
                 <br /><br />
-                <span>Don't have an account? Register here.</span>
+                <span>For account details please contact your respective hostel office</span>
             </div>
         </div>
     )
