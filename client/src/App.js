@@ -1,4 +1,4 @@
-// ADMIN: CleanReq, AdminAddAnn, AdimAnnouncements
+// ADMIN: CleanReq, AdminAddAnn, AdimAnnouncements, other
 
 import './App.css';
 import React, { useState } from "react";
@@ -12,6 +12,7 @@ import Logout from './components/LoginCard/Logout';
 import AdminAnnouncements from './components/AdminAnnouncements/AdminAnnouncements'
 import AdminAddAnn from './components/AdminAddAnn/AdminAddAnn'
 import CleanReq from './components/CleanReq/CleanReq'
+import Other from './components/AdminOther/other'
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
     {/* <AdminAnnouncements/> */}
     {/* <AdminAddAnn/> */}
     {/* <CleanReq/> */}
+     {/* <Other/>   */}
     </>
   );  
 }
