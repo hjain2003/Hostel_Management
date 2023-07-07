@@ -21,6 +21,7 @@ app.use(cors({
     credentials: true,
   }));
 app.use(express.json());
+
 app.use('/users',userRouter);
 app.use('/complaints',complaintRouter);
 app.use('/announcements',AnnouncementRouter);
