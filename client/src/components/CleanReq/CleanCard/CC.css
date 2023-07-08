@@ -1,0 +1,28 @@
+.cc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    margin-bottom: 0.5vh;
+}
+
+.ccc{
+    height:fit-content;
+    width: 90%;
+    justify-content: flex;
+    flex-direction: column;
+    background-color: rgb(215, 215, 215);
+    margin: 2vh;
+    color: black;
+    border-radius: 2vh;
+    border-radius: 20vh;
+}
+
+.cell{
+    display: inline;
+    padding-left: 2vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh ;
+}

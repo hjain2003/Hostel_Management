@@ -1,0 +1,166 @@
+.req_contain{
+    height: 70vh;
+    width: 40vw;
+    background-color: rgba(30, 30, 30, 0.98);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    color: white;
+}
+
+.ircard{
+    background-color: rgba(111, 0, 0, 0.91);
+    padding: 1vh;
+    border-radius: 2vh;
+    margin: 1vh;
+}
+
+.ircard h3 {
+    font-size: 3vh;
+}
+
+.ircard {
+    font-size: 1.5vh;
+    height: 7vh;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.reqCard{
+    width:18vw;
+}
+.hostel{
+    width: 15vw;
+}
+
+.row112{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 10vh;
+}
+
+.rhead{
+    text-align: center;
+    margin: 1vh;
+    font-size: 3vh;
+}
+
+.rclean{
+    background-color: rgba(0, 105, 28, 0.699);
+    margin: 1vh;
+    padding: 2vh;
+    border-radius: 4vh;
+    width: max-content;
+    font-size: 2vh;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+.rclean:hover{
+    cursor: pointer;
+    background-color: rgba(40, 137, 66, 0.699); 
+    font-weight: 500;
+    border-color: rgba(0, 255, 68, 0.699); 
+}
+
+.other{
+    background-color: rgba(77, 77, 77, 0.699);
+    margin: 1vh;
+    padding: 2vh;
+    border-radius: 4vh;
+    font-size: 2vh;
+    width: fit-content;
+    cursor: pointer;
+    color: white;
+    border: none;
+}
+.other:hover{
+    background-color: rgba(107, 107, 107, 0.699);
+}
+
+.cHead{
+    text-align: center;
+    margin-top: 0;
+    font-size: 3vh;
+    font-weight: 300;
+    text-decoration: underline;
+}
+
+.col-head{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top:3vh;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    background-color: transparent;
+    margin-bottom: 0.5vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    font-size: 1.5vh;
+}
+
+.reqDisplay{
+    background-color: rgba(0, 0, 0, 0.37);
+    padding:0 0 0 0 ;
+    border-radius: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 40vh;
+    overflow-x: hidden;
+    margin-top: 0;
+    width: 101%;
+}
+
+@media (max-width: 600px) {
+
+    .reqCard{
+        padding: 0;
+        margin: 0;
+        height: 6vh;
+        width: 100%;
+    }
+    
+    .req_contain {
+        border-radius: 0;
+        height: auto;
+        width: 90%;
+        overflow-y: auto;
+    }
+    .ircard{
+        background-color: rgba(111, 0, 0, 0.91);
+        width: 20vw;
+        font-size: 2vh;
+        height: 20vw;
+        margin-bottom: 2px;
+    }
+    .cHead{
+        font-size: 4vh;
+        margin: 2vh 0 0 0;
+        margin-top: 6yyyvh;
+    }    
+    .row112{
+        flex-direction: column;
+        height: 40vh;
+        overflow: hidden;
+        margin: 0;
+        padding: 2vh 0 0 0 ;
+    }
+    .hostel{
+        width: 50%;
+    }
+    .col-head{
+        margin-top: 0;
+        padding-top: 0;
+    }
+}
