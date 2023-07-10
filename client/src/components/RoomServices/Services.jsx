@@ -9,11 +9,11 @@ const Services = () => {
 
   const navigate = useNavigate();
 
-  const handleOthersbutton = ()=>{
+  const handleOthersbutton = () => {
     navigate('/reqform');
   }
   //complaint status
-  const [complaintStatus,setComplaintStatus] = useState('');
+  const [complaintStatus, setComplaintStatus] = useState('');
 
   const callComplaintStatus = async () => {
     try {
@@ -43,9 +43,9 @@ const Services = () => {
 
   //comlaintCards
   const userId = localStorage.getItem("userId");
-  const [complaintCards,setComplaintCards] = useState([1,2,3,4,5]);
-  
-  const showComplaintCards = async()=>{
+  const [complaintCards, setComplaintCards] = useState([1, 2, 3, 4, 5]);
+
+  const showComplaintCards = async () => {
     try {
       const res = await fetch(
         `http://localhost:5000/complaints/myComplaints?userId=${userId}`,
@@ -77,13 +77,13 @@ const Services = () => {
   }, []);
 
 
-  const [complaintDetails,setComplaintDetails] = useState({
+  const [complaintDetails, setComplaintDetails] = useState({
     title: "Room Cleaning",
     description: ""
   })
 
   //handleRoomCleaning
-  const handleRoomCleaning = async()=>{
+  const handleRoomCleaning = async () => {
     try {
       const res = await fetch('http://localhost:5000/complaints/addComplaint', {
         method: 'POST',
@@ -96,9 +96,9 @@ const Services = () => {
           description: complaintDetails.description
         }),
       });
-  
+
       const data = await res.json();
-  
+
       if (res.status === 422) {
         window.alert('Complaint Addition failed!');
         console.log(res.status);
@@ -113,7 +113,7 @@ const Services = () => {
       navigate('/');
     }
   }
-  
+
   return (
     <div className="entire_page_div">
       <span className='logout'><b><u><NavLink to='/logout'>LOGOUT</NavLink></u></b></span>
@@ -121,39 +121,39 @@ const Services = () => {
         <SideNavbar />
         <div className='req_contain'>
           <div className='row112'>
-              <div className="ircard">
-                REQUESTS
-                <br />
-                <h2>{complaintStatus.complaintCount}</h2>
+            <div className="ircard">
+              REQUESTS
+              <br />
+              <h2>{complaintStatus.complaintCount}</h2>
+            </div>
+            <div className="ircard">
+              RESOLVED
+              <br />
+              <h2>{complaintStatus.complaintsResolved}</h2>
+            </div>
+            <div className="reqCard">
+              <span className='rhead'>REQUEST</span>
+              <div>
+                <button className='rclean' onClick={handleRoomCleaning}><FaUser />&ensp; Room Cleaning</button>
+                <button className='other' onClick={handleOthersbutton}><FaUser />&ensp; Others</button>
               </div>
-              <div className="ircard">
-                RESOLVED
-                <br />
-                <h2>{complaintStatus.complaintsResolved}</h2>
-              </div>
-              <div className="reqCard">
-                <span className='rhead'>REQUEST</span>
-                <div>
-                <button className='rclean' onClick={handleRoomCleaning}><FaUser/>&ensp; Room Cleaning</button>
-                <button className='other' onClick={handleOthersbutton}><FaUser/>&ensp; Others</button>
-                </div>
-              </div>
+            </div>
           </div>
-        <div className='nextRow'>
-        <div className='cHead'>CURRENT REQUESTS ({complaintStatus.complaintCount - complaintStatus.complaintsResolved})</div>
-        <div className='reqDisplay'>
-        {
-          complaintCards.map((item,index) =>(
-            <RCard 
-            key= {item._id}
-            complaintId= {item._id} 
-            title={item.title}
-            date = {item.date}
-            />
-          ))
-        }
-        </div>
-        </div>
+          <div className='nextRow'>
+            <div className='cHead'>CURRENT REQUESTS ({complaintStatus.complaintCount - complaintStatus.complaintsResolved})</div>
+            <div className='reqDisplay'>
+              {
+                complaintCards.map((item, index) => (
+                  <RCard
+                    key={item._id}
+                    complaintId={item._id}
+                    title={item.title}
+                    date={item.date}
+                  />
+                ))
+              }
+            </div>
+          </div>
         </div>
       </div>
     </div>
