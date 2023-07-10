@@ -1,4 +1,3 @@
-import './App.css';
 import React, { useState } from "react";
 import Profile from './components/Profile/Profile';
 import Announcement from './components/Announcements/Announcement';
