@@ -14,7 +14,7 @@ RUN npm install
 COPY server/ .
 
 # Copy the config.env file
-COPY server/config.env .
+COPY server/config.env 
 
 # Expose environment variables (optional if using env files)
 ARG NODE_ENV=production
