@@ -158,7 +158,7 @@ const Services = () => {
         <div className='cHead'>CLEANING REQUESTS ({complaintStatus.complaintCount - complaintStatus.complaintsResolved})</div>
           <div className='row112'>
               <div className="ircard">
-                REQUESTS PENDING
+                REQUESTS
                 <br />
                 <h2>{complaintStatus.complaintCount}</h2>
               </div>
