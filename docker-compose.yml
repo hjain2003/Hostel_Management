@@ -1,24 +1,20 @@
-# version: '3.8'
+# version: "3.8"
 
 services:
   client:
     build:
-      context: ./client # Path to the client folder
+      context: .
+      dockerfile: client/Dockerfile
     ports:
-      - "3000:3000" # Expose port 3000 for the client
-    depends_on:
-      - server # Make sure the server is up before the client starts
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
 
   server:
     build:
-      context: ./server # Path to the server folder
+      context: .
+      dockerfile: server/Dockerfile
     ports:
-      - "5000:5000" # Expose port 5000 for the server
-    env_file:
-      - ./server/config.env # Use the .env file for server env variables
-    networks:
-      - app-network
-
-networks:
-  app-network:
-    driver: bridge
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
