@@ -3,10 +3,10 @@ name: Build Docker Image
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -28,9 +28,8 @@ jobs:
 
       - name: Push Docker Image for Server
         run: |
-          docker push hjain2003/hostelserverimg 
-          
-          
+          docker push hjain2003/hostelserverimg
+
       - name: Build Docker Image for Client
         run: |
           docker build -f client/Dockerfile -t hjain2003/hostelclientimg .
