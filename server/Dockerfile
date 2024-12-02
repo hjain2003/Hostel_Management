@@ -5,13 +5,13 @@ FROM node:16-alpine
 WORKDIR /app
 
 # Copy package.json and package-lock.json
-COPY package*.json ./
+COPY server/package*.json ./
 
 # Install dependencies
 RUN npm install
 
 # Copy the rest of the app's files
-COPY . .
+COPY server/ .
 
 # Expose environment variables (optional if using env files)
 ARG NODE_ENV=production
