@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the app's files
 COPY server/ .
 
+# Copy the config.env file
+COPY server/config.env ./config.env
+
 # Expose environment variables (optional if using env files)
 ARG NODE_ENV=production
 ENV NODE_ENV=$NODE_ENV
