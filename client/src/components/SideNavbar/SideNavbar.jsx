@@ -17,7 +17,7 @@ const SideNavbar = () => {
       <span>
         <NavLink to="/services">
           <FaClipboardList className="nav_icon" />
-          <span className="nav_label">Room Services</span>
+          <span className="nav_label">Room Service</span>
         </NavLink>
       </span>
       <hr /><br />
