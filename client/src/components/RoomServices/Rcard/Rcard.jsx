@@ -6,7 +6,7 @@ const RCard = (props) => {
    // console.log("COMPLAINT ID : ", props.complaintId);
    const handleDelete = async()=>{
       try {
-         const response = await fetch(`http://localhost:5000/complaints/${props.complaintId}`, {
+         const response = await fetch(`http://15.207.54.199:5000/complaints/${props.complaintId}`, {
            method: 'DELETE',
            headers: {
              'Content-Type': 'application/json',

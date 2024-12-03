@@ -46,7 +46,7 @@ function RequestForm() {
     const { title, description } = complaint_details;
 
     try {
-      const res = await fetch('http://localhost:5000/complaints/addComplaint', {
+      const res = await fetch('http://15.207.54.199:5000/complaints/addComplaint', {
         method: 'POST',
         credentials: 'include',
         headers: {

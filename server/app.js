@@ -17,7 +17,7 @@ connectDB();
 //middlewares
 app.use(cookieParser());
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'http://15.207.54.199:3000',
     credentials: true,
   }));
 app.use(express.json());

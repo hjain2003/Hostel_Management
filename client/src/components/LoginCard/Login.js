@@ -24,7 +24,7 @@ const Login = () => {
         e.preventDefault();
 
         const {email, password} = user;
-        const res = await fetch('http://localhost:5000/users/login', {
+        const res = await fetch('http://15.207.54.199:5000/users/login', {
             method: "POST",
             credentials: "include",
             headers: {

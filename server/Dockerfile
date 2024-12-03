@@ -13,6 +13,10 @@ RUN npm install
 # Copy the rest of the app's files
 COPY server/ .
 
+# Copy the .env file
+COPY server/.env ./  # Ensure .env is in the server folder during the build
+
+
 # Expose environment variables (optional if using env files)
 ARG NODE_ENV=production
 ENV NODE_ENV=$NODE_ENV

@@ -10,7 +10,7 @@ const Profile = () => {
 
   const callProfilePage = async () => {
     try {
-      const res = await fetch('http://localhost:5000/users/dashboard', {
+      const res = await fetch('http://15.207.54.199:5000/users/dashboard', {
         method: 'GET',
         headers: {
           Accept: 'application/json',

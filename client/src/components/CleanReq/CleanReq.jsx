@@ -52,7 +52,7 @@ const Services = () => {
 
   const callComplaintStatus = async () => {
     try {
-      const res = await fetch('http://localhost:5000/users/dashboard', {
+      const res = await fetch('http://15.207.54.199:5000/users/dashboard', {
         method: 'GET',
         headers: {
           Accept: 'application/json',
@@ -83,7 +83,7 @@ const Services = () => {
   const showComplaintCards = async()=>{
     try {
       const res = await fetch(
-        `http://localhost:5000/complaints/myComplaints?userId=${userId}`,
+        `http://15.207.54.199:5000/complaints/myComplaints?userId=${userId}`,
         {
           method: 'GET',
           headers: {
@@ -120,7 +120,7 @@ const Services = () => {
   //handleRoomCleaning
   const handleRoomCleaning = async()=>{
     try {
-      const res = await fetch('http://localhost:5000/complaints/addComplaint', {
+      const res = await fetch('http://15.207.54.199:5000/complaints/addComplaint', {
         method: 'POST',
         credentials: 'include',
         headers: {
