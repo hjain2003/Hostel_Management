@@ -9,7 +9,7 @@ import cors from 'cors';
 import cookieParser from "cookie-parser";
 
 const app=express();
-dotenv.config({path:'./config.env'});
+dotenv.config({path:'./.env'});
 
 //DB
 connectDB();
